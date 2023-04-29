@@ -1,3 +1,1 @@
-Rails.application.routes.draw do
-  resources :vehicles
-end
+get '/vehicles/new', to: 'vehicles#new', as: 'new_vehicle'
