@@ -1,1 +1,3 @@
-get '/vehicles/new', to: 'vehicles#new', as: 'new_vehicle'
+Rails.application.routes.draw do
+  get '/home/entrada', to: 'vehicles#entrada', as: 'nova_entrada'
+end
