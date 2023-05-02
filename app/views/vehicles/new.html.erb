@@ -1,0 +1,22 @@
+<h1>Cadastrar Entrada do Veiculo,</h1>
+
+<%= form_for @vehicle, url: new_vehicle_path, method: :post do |f| %>
+    <form>
+        <div class="field">
+            <%= f.label :placa %><br>
+            <%= f.text_field :placa %>
+        </div>
+        <div class="field">
+            <%= f.label :nome_veiculo %><br>
+            <%= f.text_field :nome_veiculo %>
+        </div>
+        <div class="field">
+            <%= f.label :dono_do_veiculo %><br>
+            <%= f.text_field :dono_do_veiculo %>
+        </div>
+        <div class="field">
+            <%= f.label :hora_entrada %><br>
+            <%= f.datetime_select :hora_entrada %>
+        </div>    
+    </form>
+<% end %>
