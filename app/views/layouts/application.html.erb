@@ -8,14 +8,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
-<script>
-function confirmCadastro() {
-    if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
-        document.form[0].submit();
-    }
-}
-</script>
   </head>
 
   <body>

@@ -18,15 +18,17 @@
             <%= f.label :hora_entrada %><br>
             <%= f.datetime_select :hora_entrada %>
         </div>
-        <button typ="button" onclick="confirmCadastro()">Cadastrar</button>
+        <button type="button" onclick="confirmCadastro()">Cadastrar</button>
     </form>
 <% end %>
 
 <script>
-function confirmCadastro() {
-    if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %%> ?')){
-        document.form[0].submit()
-    }
-}
-</script>
+    function confirmCadastro() {
+        if(confirm('Tem certeza qu deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
+          document.form[0].submit()
+        }  else {
+            window.location.href = '<%= welcome_path %>';
+          }
+        }
+    </script>
     
