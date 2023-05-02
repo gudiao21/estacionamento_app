@@ -20,3 +20,14 @@
         </div>    
     </form>
 <% end %>
+
+<script>
+    const VehicleForm = document.getElementById("vehicle-form");
+
+    vehicleForm.addEventListener("submit", (event) => {
+        const confirmation = confirm(`Tem certeza que deseja cadastrar o veículo de placa '${event.target.elements.placa.value}'?`);
+        if (!confirmation) {
+            event.preventDefault();
+        }
+    });
+    </script>
