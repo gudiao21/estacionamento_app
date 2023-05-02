@@ -1,3 +1,11 @@
 <h1><%= @mensagem %></h1>
-<%= button_to "Cadastrar entrada do veículo", new_vehicle_path, method: :get %>
-<%= button_to "Cadastrar saída do veículo", new_saida_path, method: :get %>
+
+<style>
+    .button-group {
+        margin: 10px 0;
+    }
+</style>
+<div class="button-group">
+    <%= button_to "Cadastrar entrada do veículo", new_vehicle_path, method: :get %>
+    <%= button_to "Cadastrar saída do veículo", new_saida_path, method: :get %>
+</div>
