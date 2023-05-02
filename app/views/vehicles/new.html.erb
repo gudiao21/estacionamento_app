@@ -17,17 +17,16 @@
         <div class="field">
             <%= f.label :hora_entrada %><br>
             <%= f.datetime_select :hora_entrada %>
-        </div>    
+        </div>
+        <button typ="button" onclick="confirmCadastro()">Cadastrar</button>
     </form>
 <% end %>
 
 <script>
-    const VehicleForm = document.getElementById("vehicle-form");
-
-    vehicleForm.addEventListener("submit", (event) => {
-        const confirmation = confirm(`Tem certeza que deseja cadastrar o veículo de placa '${event.target.elements.placa.value}'?`);
-        if (!confirmation) {
-            event.preventDefault();
-        }
-    });
-    </script>
+function confirmCadastro() {
+    if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %%> ?')){
+        document.form[0].submit()
+    }
+}
+</script>
+    
