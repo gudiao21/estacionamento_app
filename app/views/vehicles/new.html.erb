@@ -1,6 +1,6 @@
 <h1>Cadastrar Entrada do Veiculo</h1>
 
-<%= form_for @vehicle, url: new_vehicle_path, method: :post do |f| %>
+<%= form_for @vehicle, url: vehicles_path, method: :post do |f| %>
     <form>
         <div class="field">
             <%= f.label :placa %><br>
@@ -18,17 +18,19 @@
             <%= f.label :hora_entrada %><br>
             <%= f.datetime_select :hora_entrada %>
         </div>
-        <button type="button" onclick="confirmCadastro()">Cadastrar Entrada</button>
-    </form>
+        <%= f.submit "Cadastrar entrada", onclick: "confirmCadastro(event)", data: { confirm: "Confirma o cadastro do veículo de placa #{f.object.placa},
+            nome veículo: #{f.object.nome_veiculo},
+            dono do veículo: #{f.object.dono_do_veiculo},
+            hora de entrada: #{Time.current.strftime('%d/%m/%Y %H:%M:%S')}?" } %>
 <% end %>
 
 <script>
-    function confirmCadastro() {
+    function confirmCadastro(event) {
+        event.preventDefault();
         if(confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
-          document.form[0].submit()
-        }  else {
+            document.getElementById('vehicle-form').submit();
+        } else {
             window.location.href = '<%= welcome_path %>';
-          }
         }
-    </script>
-    
+    }
+</script> 
