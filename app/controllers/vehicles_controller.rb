@@ -14,10 +14,10 @@ class VehiclesController < ApplicationController
     end
 
     def search
-        @vehicle = Vehicle.find_by(placa: params[:placa])
+        @vehicle = Vehicle.find_by(placa: params[:search])
         if @vehicle
         #Fazer o que for necessário caso o veículo seja encontrado
-            render :show
+            render 'vehicles/search'
         else
             redirect_to welcome_path, alert: 'Veículo não encontrado!'
         end
