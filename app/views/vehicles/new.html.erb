@@ -1,6 +1,6 @@
 <h1>Cadastrar Entrada do Veiculo</h1>
 
-<%= form_for @vehicle, url: vehicles_path, method: :post do |f| %>
+<%= form_for @vehicle, url: vehicles_path, method: :post, html: { id: "vehicle-form" } do |f| %>
     <form>
         <div class="field">
             <%= f.label :placa %><br>
