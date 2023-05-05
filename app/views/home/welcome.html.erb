@@ -4,6 +4,15 @@
     <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
+<script>
+    setTimeout(function(){
+        var flashNotice = document.querySelector('.notice');
+        if(flashNotice){
+            flashNotice.remove();
+        }
+    }, 5000);
+</script>
+
 
 <style>
     .button-group {
