@@ -1,13 +1,14 @@
 class VehiclesController < ApplicationController
     def new 
-        @vehicle = ::Vehicle.new
+        @vehicle = ::Vehicle.new #'@vehicle' é usada no 'app/views/vehicles/new.html.erb'
     end
 
     def create
         @vehicle = Vehicle.new(vehicle_params)
 
         if @vehicle.save
-            redirect_to welcome_path, notice: 'Veículo cadastrado com sucesso!'
+            flash[:notice] = "Entrada cadastrada com sucesso"
+            redirect_to welcome_path
         else
             render :new
         end
