@@ -1,0 +1,26 @@
+<h1>Cadastrar Saída do Veículo</h1>
+<%= form_for @vehicle, url: new_saida_path, method: :post do |f| %>
+    <div class="field">
+        <%= label_tag :placa,  'Placa do veículo:' %>
+        <%= text_field_tag :placa %>
+</div>
+<div class="field">
+    <%= f.label :hora_saida, 'Hora de saída: ' %>
+    <%= f.datetime_local_field :hora_saida%>
+</div>
+
+<%= f.submit "Cadastrar saída", onclick: "confirmCadastro(event)", data: { confirm: "Confirma o cadastro do veículo de placa #{f.object.placa},
+   hora de saída: #{Time.current.strftime('%d/%m/%Y %H:%M:%S')}?" } %>
+<% end %>
+
+<script>
+function confirmCadastro(event) {
+    event.preventDefault();
+
+    if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
+        event.target.form.submit();
+    } else {
+        window.location.href = '<%= welcome_path %>';
+    }
+    }
+</script>

@@ -1,0 +1,17 @@
+<h1>Buscar veículo</h1>
+
+<%= form_tag search_vehicle_path, method: :get do %>
+    <%= label_tag(:search, "Buscar por placa:") %>
+    <%= text_field_tag(:search) %>
+    <%= submit_tag("Buscar") %>
+<% end %>
+
+<% if @vehicle %>
+    <h2>Informações do veículo:</h2>
+    <p><strong>Placa:</strong> <%= @vehicle.placa %></p>
+    <p><strong>Nome do veículo:</strong> <%= @vehicle.placa %></p>
+    <p><strong>Dono do veículo:</strong> <%= @vehicle.dono_do_veiculo %></p>
+    <p><strong>Hora de entrada:</strong> <%= @vehicle.hora_entrada %></p>
+    <p><strong>Total a pagar:</strong> <%= @vehicle.hora_saida %></p>
+    <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
+<% end %>
