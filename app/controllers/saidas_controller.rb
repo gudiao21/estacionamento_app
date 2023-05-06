@@ -5,7 +5,9 @@ class SaidasController < ApplicationController
     
     def create
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        if @vehicle.update(hora_saida: params[:hora_saida])
+        @vehicle.hora_saida = params[:hora_saida]
+        
+        if @vehicle.save
             redirect_to welcome_path, notice: 'Saída do veículo cadastrada com sucesso!'
         else
             render :new
