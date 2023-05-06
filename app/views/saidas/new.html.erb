@@ -11,6 +11,7 @@
 
 <%= f.submit "Cadastrar saída", onclick: "confirmCadastro(event)", data: { confirm: "Confirma o cadastro do veículo de placa #{f.object.placa},
    hora de saída: #{Time.current.strftime('%d/%m/%Y %H:%M:%S')}?" } %>
+<%= button_to "Voltar para tela Principal", welcome_path, method: :get, class: "btn"%>
 <% end %>
 
 <script>
@@ -19,8 +20,18 @@ function confirmCadastro(event) {
 
     if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
         event.target.form.submit();
-    } else {
-        window.location.href = '<%= welcome_path %>';
     }
-    }
+}
 </script>
+
+<!-- Exibir os atributos do @vehicle -->
+<% if @vehicle.present? %>
+<h2>Atributos do Veículo:</h2>
+<p><strong>Placa:</strong> <%= @vehicle.placa %></p>
+<p><strong>Nome do Veículo:</strong> <%= @vehicle.nome_veiculo%>
+<p><strong>Dono do Veículo:</strong> <% @vehicle.dono_do_veiculo%>
+<p><strong>Hora de Entrada:</strong> <%= @vehicle.hora_entrada%></p>
+<p><strong>Hora de Saída:</strong> <%= @vehicle.hora_saida %></p>
+<p><strong>Total a Pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
+<!-- Exibirt outros atributos do @vehicle, se houver -->
+<% end %>
