@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/saidas/new', to: 'saidas#new', as: 'new_saida'
   post '/saidas/new', to: 'saidas#create', as:'create_saida'
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
+  
 end
