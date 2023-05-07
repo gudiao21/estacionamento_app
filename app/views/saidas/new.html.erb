@@ -27,6 +27,29 @@ function confirmCadastro(event) {
 </script>
 <!-- Exibir os atributos do @vehicle -->
 
+<script>
+    document.addEventListener('DOMContentLoaded' , function(){
+        var popupLink = document.getElementById('popup-link');
+
+        popupLink.addEventListener('click' , function(event) {
+            event.preventDefault();
+
+            //Criar a janela pop-up
+            var popup = window.open('', 'popupWindow', 'width=400,height=300');
+
+            //Preencher a janela pop-up com os atributos do veículo
+            var content = '<h2>Atributos do Veículo:</h2>';
+            content += '<p><strong>Placa:</strong> <%= @vehicle.placa %></p>';
+            content += '<p><strong>Nome do Veículo:</strong> <%= @vehicle.nome_veiculo %></p>';
+            content += '<p><strong>Dono do Veículo:</strong> <%= @vehicle.dono_do_veiculo %></p>';
+            content += '<p><strong>Hora de Entrada:</strong> <%= @vehicle.hora_entrada %></p>';
+            content += '<p><strong>Hora de Saída:</strong> <%= @vehicle.hora_saida %></p>';
+            content += '<p><strong>Total a Pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>';
+            popup.document.write(content);
+        });
+    });
+    </script>
+<!--
 <%if @vehicle.persisted? %>
     <h2>Atributos do Veículo:</h2>
     <p><strong>Placa:</strong> <%= @vehicle.placa %></p>
@@ -35,5 +58,6 @@ function confirmCadastro(event) {
     <p><strong>Hora de Entrada:</strong> <%= @vehicle.hora_entrada%></p>
     <p><strong>Hora de Saída:</strong> <%= @vehicle.hora_saida %></p>
     <p><strong>Total a Pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
-    <!-- Exibir outros atributos do @vehicle, se houver -->
+    Exibir outros atributos do @vehicle, se houver
 <% end %>
+-->
