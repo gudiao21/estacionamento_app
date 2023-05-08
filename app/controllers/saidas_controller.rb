@@ -21,8 +21,9 @@ class SaidasController < ApplicationController
     private
 
     def calculo(placa, hora_entrada, hora_saida)
-        minuto_total = ((hora_saida) - (hora_entrada)) / 60
-        resultado = minuto_total * 0.17
+        segundos_total = hora_saida - hora_entrada).to_i
+        minutos_total = (segundos_total) / 60
+        resultado = minutos_total * 0.17
         return resultado
     end
 
