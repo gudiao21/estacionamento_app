@@ -1,63 +1,26 @@
 <h1>Cadastrar Saída do Veículo</h1>
 
 <%= form_for @vehicle, url: new_saida_path, method: :post do |f| %>
-    <div class="field">
-        <%= label_tag :placa,  'Placa do veículo:' %>
-        <%= text_field_tag :placa %>
-        <!--O 'tag' de 'text_field_tag' indica que esse atributo será considerado um parâmetro de nível superior, ou seja, poderá ser acessado da seguinte forma direta 'params[:placa]'.-->
-</div>
-<div class="field">
+  <div class="field">
+    <%= label_tag :placa, 'Placa do veículo:' %>
+    <%= text_field_tag :placa %>
+  </div>
+  <div class="field">
     <%= f.label :hora_saida, 'Hora de saída: ' %>
-    <%= f.datetime_local_field :hora_saida%>
-    <!--No caso de 'f.datetime_local_field', ele cria um campo cujo atributo será associado a um objeto do modelo 'Vehicle' representado por '@vehicle'. Nesse caso, o valor é enviado dentro de um objeto 'vehicle' aninhado dentro de 'params'. Por isso, você precisará acessá-lo usando 'params[:vehicle][:hora_saida]'.-->
-</div>
+    <%= f.datetime_local_field :hora_saida %>
+  </div>
 
-<%= f.submit "Cadastrar saída", class: "btn" %>
-<%= button_to "Voltar para tela Principal", welcome_path, method: :get, class: "btn"%>
+  <%= f.submit "Cadastrar saída", class: "btn", id: "submit-button" %>
+  <%= button_to "Voltar para tela Principal", welcome_path, method: :get, class: "btn" %>
 <% end %>
 
-<script>
-function confirmCadastro(event) {
-    event.preventDefault();
-
-    if (confirm('Tem certeza que deseja cadastrar o veículo de placa <%= @vehicle.placa %> ?')){
-        event.target.form.submit();
-    }
-}
-</script>
-<!-- Exibir os atributos do @vehicle -->
-
-<script>
-    document.addEventListener('DOMContentLoaded' , function(){
-        var popupLink = document.getElementById('popup-link');
-
-        popupLink.addEventListener('click' , function(event) {
-            event.preventDefault();
-
-            //Criar a janela pop-up
-            var popup = window.open('', 'popupWindow', 'width=400,height=300');
-
-            //Preencher a janela pop-up com os atributos do veículo
-            var content = '<h2>Atributos do Veículo:</h2>';
-            content += '<p><strong>Placa:</strong> <%= @vehicle.placa %></p>';
-            content += '<p><strong>Nome do Veículo:</strong> <%= @vehicle.nome_veiculo %></p>';
-            content += '<p><strong>Dono do Veículo:</strong> <%= @vehicle.dono_do_veiculo %></p>';
-            content += '<p><strong>Hora de Entrada:</strong> <%= @vehicle.hora_entrada %></p>';
-            content += '<p><strong>Hora de Saída:</strong> <%= @vehicle.hora_saida %></p>';
-            content += '<p><strong>Total a Pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>';
-            popup.document.write(content);
-        });
-    });
-    </script>
-<!--
 <%if @vehicle.persisted? %>
     <h2>Atributos do Veículo:</h2>
     <p><strong>Placa:</strong> <%= @vehicle.placa %></p>
     <p><strong>Nome do Veículo:</strong> <%= @vehicle.nome_veiculo%></p>
     <p><strong>Dono do Veículo:</strong> <%= @vehicle.dono_do_veiculo%></p>
     <p><strong>Hora de Entrada:</strong> <%= @vehicle.hora_entrada%></p>
-    <p><strong>Hora de Saída:</strong> <%= @vehicle.hora_saida %></p>
+    <p><strong>Hora de Saída:</strong> <%= debugger @vehicle.hora_saida %></p>
     <p><strong>Total a Pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
     Exibir outros atributos do @vehicle, se houver
 <% end %>
--->
