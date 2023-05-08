@@ -7,10 +7,13 @@ class SaidasController < ApplicationController
         @vehicle = Vehicle.find_by(placa: params[:placa])
         @vehicle.hora_saida = params[:vehicle][:hora_saida]
         @vehicle.total_a_pagar_por_veiculo = calculo(@vehicle.placa, @vehicle.hora_entrada, @vehicle.hora_saida)
-        debugger
+        #debugger
         if @vehicle.save
-            redirect_to new_saida_path(vehicle: @vehicle), notice: 'Saída do veículo cadastrada com sucesso!'
+            flash[:notice] = 'Saída do veículo cadastrada com sucesso!'
+            flash[:vehicle_attributes] = @vehicle.attributes.slice('placa', 'nome_veiculo', 'dono_do_veiculo', 'hora_entrada', 'hora_saida', 'total_a_pagar_por_veiculo')
+            redirect_to welcome_path
         else
+            flash[:error] = 'Erro ao cadastrar saída do veículo.'
             render :new
         end
     end
