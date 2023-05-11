@@ -23,5 +23,7 @@
     <%= button_to "Cadastrar entrada do veículo", new_vehicle_path, method: :get %>
     <%= button_to "Cadastrar saída do veículo", new_saida_path, method: :get %>
     <%= button_to "Buscar veículo por placa", search_vehicle_path, method: :get %>
-    <%= button_to "Deletar um registro de um veículo por placa", delete_vehicle_path, method: :post %> 
+    <% if @vehicle && @vehicle.placa.present? %>
+        <%= button_to "Deletar um registro de um veículo por placa", delete_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn' %>
+<% end %>
 </div>

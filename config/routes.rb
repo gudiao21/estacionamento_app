@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/saidas/new', to: 'saidas#new', as: 'new_saida' #Chama o método 'new'do controlador 'saidas'.
   post '/saidas/new', to: 'saidas#create', as:'create_saida'
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
-  post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
-  delete '/vehicles/:id', to: 'vehicles#destroy', as: 'vehicle'
+  #post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
+  delete '/vehicles/:placa', to: 'vehicles#destroy', as: 'delete_vehicle'
 end
