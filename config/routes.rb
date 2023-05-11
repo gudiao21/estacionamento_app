@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post '/saidas/new', to: 'saidas#create', as:'create_saida'
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
   post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
-  delete '/vehicles/:id', to: 'vehicles#destroy, as: 'vehicle'
+  delete '/vehicles/:id', to: 'vehicles#destroy', as: 'vehicle'
 end
