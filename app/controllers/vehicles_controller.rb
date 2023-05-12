@@ -49,7 +49,7 @@ class VehiclesController < ApplicationController
           flash[:error] = 'Veículo não encontrado.'
           #redirect_to delete_vehicle_path
         end
-        redirect_to delete_vehicle_path
+        redirect_to procurar_deletar_path
         #render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
     end
       
