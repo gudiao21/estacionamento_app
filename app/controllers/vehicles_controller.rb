@@ -19,6 +19,10 @@ class VehiclesController < ApplicationController
         puts @vehicle.inspect
     end
 
+    def procurar_deletar
+        @vehicle = Vehicle.find_by(placa: params[:placa])
+    end
+
     def show
         @vehicle = Vehicle.find(params[:id])
     end
@@ -36,8 +40,10 @@ class VehiclesController < ApplicationController
           end
         else
           flash[:error] = 'Veículo não encontrado.'
-          redirect_to delete_vehicle_path
+          #redirect_to delete_vehicle_path
         end
+
+        render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
       end
       
     private

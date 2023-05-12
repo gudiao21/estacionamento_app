@@ -13,17 +13,16 @@
     }, 5000);
 </script>
 
-
 <style>
     .button-group {
         margin: 10px 0;
     }
 </style>
+
 <div class="button-group">
     <%= button_to "Cadastrar entrada do veículo", new_vehicle_path, method: :get %>
     <%= button_to "Cadastrar saída do veículo", new_saida_path, method: :get %>
     <%= button_to "Buscar veículo por placa", search_vehicle_path, method: :get %>
-    <% if @vehicle && @vehicle.placa.present? %>
-        <%= button_to "Deletar um registro de um veículo por placa", delete_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn' %>
-<% end %>
+    <!-- <button onclick="window.location.href='delete_vehicle';" class="btn">Deletar um registro de um veículo por placa</button> -->
+    <%= button_to "Deletar um registro de um veículo por placa", delete_vehicle_path, method: :get, class: 'btn' %>
 </div>
