@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-    def new 
+    def new
         @vehicle = ::Vehicle.new #'@vehicle' é usada no 'app/views/vehicles/new.html.erb'
     end
 
@@ -19,8 +19,15 @@ class VehiclesController < ApplicationController
         puts @vehicle.inspect
     end
 
+    def delete
+      render 'delete'
+    end
+
     def procurar_deletar
         @vehicle = Vehicle.find_by(placa: params[:placa])
+        #debugger
+        #render 'delete'
+        redirect_to delete_vehicle_path(placa: params[:placa]) if @vehicle
     end
 
     def show
@@ -33,18 +40,18 @@ class VehiclesController < ApplicationController
         if @vehicle
           if @vehicle.destroy
             flash[:notice] = 'Registro de veículo excluído com sucesso.'
-            redirect_to delete_vehicle_path
+            #redirect_to delete_vehicle_path
           else
             flash[:error] = 'Erro ao excluir o registro de veículo.'
-            redirect_to delete_vehicle_path(placa: @vehicle.placa)
+            #redirect_to delete_vehicle_path(placa: @vehicle.placa)
           end
         else
           flash[:error] = 'Veículo não encontrado.'
           #redirect_to delete_vehicle_path
         end
-
-        render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
-      end
+        redirect_to delete_vehicle_path
+        #render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
+    end
       
     private
 
