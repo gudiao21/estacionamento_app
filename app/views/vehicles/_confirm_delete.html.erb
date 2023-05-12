@@ -1,0 +1,10 @@
+<h2>Confirmar exclusão</h2>
+    <p>Você está prestes a excluir o seguinte registro de veículo:</p>
+    <p><strong>Placa:</strong> <%= vehicle.placa %></p>
+    <p><strong>Nome do Veículo:</strong> <%= vehicle.nome_veiculo %></p>
+    <p><strong>Dono do Veículo:</strong> <%= vehicle.dono_do_veiculo %></p>
+    <p><strong>Hora de entrada:</strong> <%= vehicle.hora_entrada %></p>
+    <p><strong>Hora de saída:</strong> <%= vehicle.hora_saida %></p>
+    <p><strong>Total a pagar:</strong> <%= vehicle.total_a_pagar_por_veiculo %></p>
+    
+    <%= button_to 'Excluir', destroy_vehicle_path(placa: vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn' %>
