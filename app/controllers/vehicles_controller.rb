@@ -14,6 +14,10 @@ class VehiclesController < ApplicationController
         end
     end
 
+    def edit
+        @vehicle = Vehicle.find(params[:placa])
+    end  
+
     def search
         @vehicle = Vehicle.find_by(placa: params[:search])
         puts @vehicle.inspect
