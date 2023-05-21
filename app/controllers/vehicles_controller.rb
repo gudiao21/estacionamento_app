@@ -14,7 +14,7 @@ class VehiclesController < ApplicationController
         end
     end
 
-    def edit
+    def edit_by_placa
         @vehicle = Vehicle.find(params[:placa])
     end  
 
