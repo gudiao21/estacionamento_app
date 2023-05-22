@@ -31,7 +31,7 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find_by(placa: params[:placa])
         #debugger
         #render 'delete'
-        redirect_to delete_vehicle_path(placa: params[:placa]) if @vehicle
+        redirect_to delete_path(placa: params[:placa]) if @vehicle
     end
 
     def show
