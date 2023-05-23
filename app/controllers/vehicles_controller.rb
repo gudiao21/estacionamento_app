@@ -10,7 +10,7 @@ class VehiclesController < ApplicationController
             flash[:notice] = "Entrada cadastrada com sucesso"
             redirect_to welcome_path
         else
-            render :new
+            render :saida
         end
     end
 

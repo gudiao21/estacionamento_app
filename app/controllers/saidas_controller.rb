@@ -1,5 +1,5 @@
 class SaidasController < ApplicationController
-    def new
+    def saida
         @vehicle = ::Vehicle.new
     end
     
