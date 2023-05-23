@@ -24,15 +24,25 @@ class VehiclesController < ApplicationController
     end
 
     def delete
-        @vehicle = Vehicle.find_by(placa: params[:search])
+        @vehicle = Vehicle.find_by(placa: params[:placa])
             if @vehicle
-                render 'delete', locals: { vehicle: @vehicle }
+                if @vehicle.destroy
+                    flash[:notice] = 'Regitro de veículo excluído com sucesso.'
+                    redirect_to delete_vehicle_path
+                else
+                    flash[:error] = 'Erro ao excluir o registro do veículo.'
+                    redirect_to delete_vehicle_path(placa: params[:placa])
+                end
             else
-                redirect_to delete_vehicle_path, alert: "Veículo não encontrado."
+                flash[:error] = 'Veículo não encontrado.'
+                redirect_to delete_vehicle_path
             end
-        #render 'delete'
     end
 
+    def redirecionar
+        render 'delete' #Aqui 'delete' se refere ao template "delete.html.erb".
+    end
+    
     def procurar_deletar
         @vehicle = Vehicle.find_by(placa: params[:placa])
         #debugger
@@ -44,24 +54,23 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find(params[:id])
     end
     
-    def destroy
-        @vehicle = Vehicle.find_by(placa: params[:placa])
+    #  def destroy
+    #      @vehicle = Vehicle.find_by(placa: params[:placa])
       
-        if @vehicle
-          if @vehicle.destroy
-            flash[:notice] = 'Registro de veículo excluído com sucesso.'
-            #redirect_to delete_vehicle_path
-          else
-            flash[:error] = 'Erro ao excluir o registro de veículo.'
-            #redirect_to delete_vehicle_path(placa: @vehicle.placa)
-          end
-        else
-          flash[:error] = 'Veículo não encontrado.'
-          #redirect_to delete_vehicle_path
-        end
-        redirect_to procurar_deletar_path
-        #render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
-    end
+    #      if @vehicle
+    #        if @vehicle.destroy
+    #          flash[:notice] = 'Registro de veículo excluído com sucesso.'
+    #          #redirect_to delete_vehicle_path
+    #        else
+    #          flash[:error] = 'Erro ao excluir o registro de veículo.'
+    #          #redirect_to delete_vehicle_path(placa: @vehicle.placa)
+    #        end
+    #        else
+    #        flash[:error] = 'Veículo não encontrado.'
+    #        #redirect_to delete_vehicle_path
+    #      end
+    #     render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
+    # end
       
     private
 
