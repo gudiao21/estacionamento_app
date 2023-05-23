@@ -18,12 +18,12 @@ class SaidasController < ApplicationController
                 #redirect_to welcome_path
             else
                 flash[:error] = 'Erro ao cadastrar saída do veículo.'
-                render :new
+                render :saida
         
             end
         else
             flash[:error] = 'Veículo não encontrado.'
-            render :new 
+            render :saida
         end       
     end
 
