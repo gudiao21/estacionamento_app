@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #E 'vehicles' é o nome do controller.
   post '/vehicles', to: 'vehicles#create', as: 'vehicles'
   get '/saidas/new', to: 'saidas#new', as: 'new_saida' #Chama o método 'new'do controlador 'saidas'.
-  post '/saidas/new', to: 'saidas#create', as:'create_saida'
+  post '/saidas/new', to: 'saidas#create', as:'saida'
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
   #post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
   get '/redirecionar', to: 'vehicles#redirecionar', as: 'redirecionar_vehicle'
