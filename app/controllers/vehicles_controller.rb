@@ -44,9 +44,14 @@ class VehiclesController < ApplicationController
     
     def procurar_deletar
         @vehicle = Vehicle.find_by(placa: params[:placa])
+        if @vehicle
         #debugger
-        #render 'delete'
-        redirect_to delete_vehicle_path(placa: params[:placa]) if @vehicle
+            render 'delete'
+        #redirect_to delete_vehicle_path(placa: params[:placa]) if @vehicle
+        else
+            flash[:error] = 'Veículo não encontrado.'
+            render 'delete'
+        end
     end
 
     def show

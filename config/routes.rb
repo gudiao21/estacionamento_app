@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/saidas/new', to: 'saidas#create', as: 'saida'
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
   #post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
-  get '/deletar', to: 'vehicles#redirecionar', as: 'delete_form'
+  get '/deletar', to: 'vehicles#procurar_deletar', as: 'delete_form'
   delete '/delete_vehicle/:placa', to: 'vehicles#delete', as: 'delete_vehicle'
   post '/search_vehicle', to: 'vehicles#procurar_deletar', as: 'procurar_deletar'
   #delete'/vehicles/:placa', to: 'vehicles#destroy', as: 'destroy_vehicle'
