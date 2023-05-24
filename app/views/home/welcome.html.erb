@@ -20,10 +20,10 @@
 </style>
 
 <div class="button-group">
-    <%= button_to "Cadastrar entrada do veículo", new_vehicle_path, method: :get %>
+    <%= button_to "Cadastrar entrada do veículo", entrada_path, method: :get %>
     <%= button_to "Cadastrar saída do veículo", new_saida_path, method: :get %>
     <%= button_to "Buscar veículo por placa", search_vehicle_path, method: :get %>
     <!-- <button onclick="window.location.href='delete_vehicle';" class="btn">Deletar um registro de um veículo por placa</button> -->
-    <%= button_to "Deletar um registro de um veículo por placa", redirecionar_vehicle_path, method: :get, class: 'btn btn-primary' %>
+    <%= button_to "Deletar um registro de um veículo por placa", delete_form_path, method: :get, class: 'btn btn-primary' %>
     <%= button_to "Editar um registro de um veículo por placa", edit_by_placa_vehicle_path(@vehicle), method: :get, class: "edit-button" %>
 </div>

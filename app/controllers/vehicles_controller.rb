@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-    def new
+    def entrada
         @vehicle = ::Vehicle.new #'@vehicle' é usada no 'app/views/vehicles/new.html.erb'
     end
 
@@ -20,7 +20,6 @@ class VehiclesController < ApplicationController
 
     def search
         @vehicle = Vehicle.find_by(placa: params[:search])
-        puts @vehicle.inspect
     end
 
     def delete

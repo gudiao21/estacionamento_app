@@ -1,4 +1,4 @@
-<%= form_tag delete_vehicle_path, method: :delete do %>
+<%= form_tag delete_form_path, method: :get do %>
     <%= label_tag(:Placa, "Buscar por placa:") %>
     <%= text_field_tag(:placa) %>
     <%= submit_tag("Buscar") %>

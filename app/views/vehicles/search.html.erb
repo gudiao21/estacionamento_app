@@ -14,4 +14,5 @@
     <p><strong>Hora de entrada:</strong> <%= @vehicle.hora_entrada %></p>
     <p><strong>Hora saída:</strong> <%= @vehicle.hora_saida %></p>
     <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
+    <%= button_to "Voltar ao Menu Principal", welcome_path, method: :get %>
 <% end %>
