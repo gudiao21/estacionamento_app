@@ -7,4 +7,4 @@
     <p><strong>Hora de saída:</strong> <%= @vehicle.hora_saida %></p>
     <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
     
-    <%= button_to 'Excluir', delete_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn' %>
+    <%= button_to 'Excluir', destroy_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn' %>

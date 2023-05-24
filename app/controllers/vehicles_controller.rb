@@ -22,19 +22,19 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find_by(placa: params[:search])
     end
 
-    def delete
+    def destroy
         @vehicle = Vehicle.find_by(placa: params[:placa])
             if @vehicle
                 if @vehicle.destroy
                     flash[:notice] = 'Regitro de veículo excluído com sucesso.'
-                    redirect_to delete_vehicle_path
+                    redirect_to delete_form_path
                 else
                     flash[:error] = 'Erro ao excluir o registro do veículo.'
-                    redirect_to delete_vehicle_path(placa: params[:placa])
+                    redirect_to delete_form_path(placa: params[:placa])
                 end
             else
                 flash[:error] = 'Veículo não encontrado.'
-                redirect_to delete_vehicle_path
+                redirect_to delete_form_path
             end
     end
 

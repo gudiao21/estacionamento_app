@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/busca', to: 'vehicles#search', as: 'search_vehicle'
   #post '/vehicles/delete', to: 'vehicles#delete', as: 'delete_vehicle'
   get '/deletar', to: 'vehicles#procurar_deletar', as: 'delete_form'
-  delete '/delete_vehicle/:placa', to: 'vehicles#delete', as: 'delete_vehicle'
+  delete '/delete_vehicle/:placa', to: 'vehicles#destroy', as: 'destroy_vehicle'
   post '/search_vehicle', to: 'vehicles#procurar_deletar', as: 'procurar_deletar'
   #delete'/vehicles/:placa', to: 'vehicles#destroy', as: 'destroy_vehicle'
   get 'edit_by_placa', to: 'vehicles#edit_by_placa', as: 'edit_by_placa_vehicle'
