@@ -3,7 +3,7 @@
   <head>
     <title>Estacionamento</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %> <!-- token de autenticidade no formulário do botão "Deletar esse veículo".>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -11,6 +11,6 @@
   </head>
 
   <body>
-    <%= yield %> <!-- Carrega a nossa 'welcome.html.erb'-->
+    <%= yield %> <!-- Carrega a nossa 'welcome.html.erb' page.-->
   </body>
 </html>

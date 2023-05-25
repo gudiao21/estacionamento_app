@@ -16,6 +16,13 @@ class VehiclesController < ApplicationController
 
     def edit_by_placa
         @vehicle = Vehicle.find_by(placa: params[:placa])
+
+        if @vehicle
+            render 'edit_by_placa_vehicle'
+        else
+            flash[:error] = 'Veículo não encontrado.'
+            redirect_to welcome_path
+        end
     end  
 
     def search
