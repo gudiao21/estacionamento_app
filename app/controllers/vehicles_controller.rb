@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
     def entrada
-        @vehicle = ::Vehicle.new #'@vehicle' é usada no 'app/views/vehicles/new.html.erb'
+        @vehicle = ::Vehicle.new #'@vehicle' é usada no 'app/views/vehicles/entrada.html.erb'
     end
 
     def create
@@ -15,6 +15,7 @@ class VehiclesController < ApplicationController
     end
 
     def edit_by_placa
+        #render 'edit_by_placa_vehicle'
         @vehicle = Vehicle.find_by(placa: params[:placa])
 
         if @vehicle
@@ -23,7 +24,17 @@ class VehiclesController < ApplicationController
             flash[:error] = 'Veículo não encontrado.'
             redirect_to welcome_path
         end
-    end  
+    end
+
+    def update
+        @vehicle = Vehicle.find_by(placa: params[:placa])
+        if @vehicle.update(vehicle_params)
+            flash[:notice] = 'Registro do veículo atualizado com sucesso.'
+            redirect_to welcome_path
+        else
+            render :edit_by_placa_vehicle
+        end
+    end
 
     def search
         @vehicle = Vehicle.find_by(placa: params[:search])
