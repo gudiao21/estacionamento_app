@@ -17,9 +17,9 @@ class VehiclesController < ApplicationController
     def edit_by_placa
         #render 'edit_by_placa_vehicle'
         @vehicle = Vehicle.find_by(placa: params[:placa])
+        debugger
 
         if @vehicle
-            debugger
             render 'edit_by_placa_vehicle'
         else
             flash[:error] = 'Veículo não encontrado.'
@@ -61,6 +61,12 @@ class VehiclesController < ApplicationController
     def redirecionar
         render 'delete' #Aqui 'delete' se refere ao template "delete.html.erb".
     end
+
+    def redirecionar_edit
+        #render 'edit_by_placa'
+        #debugger
+        redirect_to edit_form_path
+    end    
     
     def procurar_deletar
         @vehicle = Vehicle.find_by(placa: params[:placa])
