@@ -63,9 +63,17 @@ class VehiclesController < ApplicationController
     end
 
     def redirecionar_edit
-        #render 'edit_by_placa'
+        placa = params[:placa]
+        @vehicle = Vehicle.find_by(placa: placa)
+
+        if @vehicle
+            render 'edit_by_placa'
+        else
+            flash[:error] = 'Veículo não encontrado.'
+            render 'welcome'
+        end    
         #debugger
-        redirect_to edit_form_path
+        #redirect_to edit_form_path
     end    
     
     def procurar_deletar
