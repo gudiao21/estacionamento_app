@@ -19,6 +19,7 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find_by(placa: params[:placa])
 
         if @vehicle
+            debugger
             render 'edit_by_placa_vehicle'
         else
             flash[:error] = 'Veículo não encontrado.'
