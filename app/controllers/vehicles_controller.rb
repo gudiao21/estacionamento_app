@@ -58,6 +58,10 @@ class VehiclesController < ApplicationController
             redirect_to welcome_path
     end
 
+    def search_edit_vehicle
+        render ''
+    end
+
     def redirecionar
         render 'delete' #Aqui 'delete' se refere ao template "delete.html.erb".
     end
@@ -112,6 +116,16 @@ class VehiclesController < ApplicationController
     #      end
     #     render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
     # end
+    
+    def find_vehicle
+        @vehicle = Vehicle.find_by(placa: params[:placa])
+        if @vehicle
+            redirect_to edit_vehicle_path(@vehicle)
+        else
+            flash[:error] = "Veículo não encontrado"
+            redirect_to search_edit_vehicle_path
+        end
+    end
       
     private
 
