@@ -29,11 +29,11 @@ class VehiclesController < ApplicationController
 
     def update
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        if @vehicle.update(vehicle_params)
-            flash[:notice] = 'Registro do veículo atualizado com sucesso.'
-            redirect_to welcome_path
+        if @vehicle
+            redirect_to edit_vehicle_path(@vehicle)
         else
-            render :edit_by_placa_vehicle
+            flash[:error] = 'Veículo não encontrado.'
+            redirect_to edit_by_placa_path
         end
     end
 

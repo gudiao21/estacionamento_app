@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   #post 'edit_by_placa', to: 'vehicles#edit_by_placa', as: 'edit_by_placa_vehicle_post'
   get '/edit_form', to: 'vehicles#redirecionar_edit_form', as: 'edit_form'
   patch '/edit_by_placa/:placa', to: 'vehicles#update', as: 'update_vehicle'
+  get '/search_edit_vehicle', to: 'vehicles#search_edit_vehicle', as: 'search_edit_vehicle'
 end
