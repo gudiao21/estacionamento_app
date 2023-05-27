@@ -59,7 +59,7 @@ class VehiclesController < ApplicationController
     end
 
     def search_edit_vehicle
-        render ''
+        render 'search_edit_vehicle'
     end
 
     def redirecionar
@@ -125,6 +125,11 @@ class VehiclesController < ApplicationController
             flash[:error] = "Veículo não encontrado"
             redirect_to search_edit_vehicle_path
         end
+    end
+
+    def edit
+        @vehicle = Vehicle.find_by(placa: params[:placa])
+        render 'edit'
     end
       
     private

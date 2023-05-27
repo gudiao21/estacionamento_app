@@ -1,10 +1,10 @@
-<h1>Editar Veículo pela placa</h1>
-<%= form_tag search_vehicle_path, method: :get do %>
+<h1>Buscar Veículo</h1>
+<%= form_tag find_vehicle_path, method: :get do %>
   <%= label_tag(:placa, "Buscar por placa:") %>
   <%= text_field_tag(:placa) %>
   <%= submit_tag("Buscar") %>
 <% end %>
-<hr>
+
 
 <!--<% if @vehicle %>
   <h2>Informações do veículo:</h2>

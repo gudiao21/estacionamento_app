@@ -1,0 +1,8 @@
+<h1>Editar Veículo</h1>
+<%= form_for @vehicle do |f| %>
+    <%= f.label :placa, "Placa do Veículo" %>
+    <%= f.text_field :placa %>
+    <%= f.label :nome_veiculo, "Nome do Veículo" %>
+    <%= f.text_field :nome_veiculo %>
+    <%= f.submit "Editar" %>
+    <%= end %>
