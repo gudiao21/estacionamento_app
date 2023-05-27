@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   post '/search_vehicle', to: 'vehicles#procurar_deletar', as: 'procurar_deletar'
   #delete'/vehicles/:placa', to: 'vehicles#destroy', as: 'destroy_vehicle'
   #post 'edit_by_placa', to: 'vehicles#edit_by_placa', as: 'edit_by_placa_vehicle_post'
-  get '/edit_form', to: 'vehicles#redirecionar_edit', as: 'edit_form'
+  get '/edit_form', to: 'vehicles#redirecionar_edit_form', as: 'edit_form'
   patch '/edit_by_placa/:placa', to: 'vehicles#update', as: 'update_vehicle'
 end
