@@ -123,7 +123,8 @@ class VehiclesController < ApplicationController
             if @vehicle
                 #debugger
                 #redirect_to edit_vehicle_path(placa: @vehicle.placa)
-                redirect_to edit_vehicle_path(@vehicle)
+                #redirect_to edit_vehicle_path(@vehicle)
+                render 'edit'
             else
                 flash[:error] = "Veículo não encontrado"
                 redirect_to search_edit_vehicle_path
