@@ -143,6 +143,7 @@ class VehiclesController < ApplicationController
 
     def report
         @vehicle = Vehicle.all
+        render 'report'
     end
       
     private
