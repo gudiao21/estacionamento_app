@@ -1,8 +1,16 @@
 <h1>Editar Veículo</h1>
-<%= form_for @vehicle do |f| %>
+<%= form_for vehicle do |f| %>
     <%= f.label :placa, "Placa do Veículo" %>
     <%= f.text_field :placa %>
     <%= f.label :nome_veiculo, "Nome do Veículo" %>
     <%= f.text_field :nome_veiculo %>
+    <%= f.label :dono_do_veiculo, "Dono do Veículo" %>
+    <%= f.text_field :dono_do_veiculo %>
+    <%= f.label :hora_entrada, "Hora de Entrada" %>
+    <%= f.text_field :hora_entrada %>
+    <%= f.label :hora_saida, "Hora de Saída" %>
+    <%= f.text_field :hora_saida %>
+    <%= f.label :total_a_pagar_por_veiculo, "Total a pagar por veículo" %>
+    <%= f.text_field :total_a_pagar_por_veiculo %>
     <%= f.submit "Editar" %>
-    <%= end %>
+<% end %>

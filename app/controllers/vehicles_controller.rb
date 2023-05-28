@@ -67,7 +67,7 @@ class VehiclesController < ApplicationController
     end
 
     def redirecionar_edit_form
-        render 'edit_by_placa'
+        render 'edit'
         # placa = params[:placa]
         # @vehicle = Vehicle.find_by(placa: placa)
 
@@ -119,17 +119,26 @@ class VehiclesController < ApplicationController
     
     def find_vehicle
         @vehicle = Vehicle.find_by(placa: params[:placa])
+        debugger
+            if @vehicle
+                #debugger
+                #redirect_to edit_vehicle_path(placa: @vehicle.placa)
+                render 'edit', locals: { vehicle: @vehicle }
+            else
+                flash[:error] = "Veículo não encontrado"
+                redirect_to search_edit_vehicle_path
+            end
+    end
+
+    def edit
+        #debugger
+        @vehicle = Vehicle.find_by(placa: params[:placa])
         if @vehicle
-            redirect_to edit_vehicle_path(@vehicle)
+            redirect_to edit_form_path(@vehicle)
         else
             flash[:error] = "Veículo não encontrado"
             redirect_to search_edit_vehicle_path
         end
-    end
-
-    def edit
-        @vehicle = Vehicle.find_by(placa: params[:placa])
-        render 'edit'
     end
       
     private
