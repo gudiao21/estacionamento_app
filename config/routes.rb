@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/search_edit_vehicle', to: 'vehicles#search_edit_vehicle', as: 'search_edit_vehicle'
   get '/find_vehicle', to: 'vehicles#find_vehicle', as: 'find_vehicle'
   get '/vehicles/:placa/edit', to: 'vehicles#edit', as: 'edit_vehicle'
+  get '/vehicles/report', to: 'vehicles#report', as: 'report'
 end
