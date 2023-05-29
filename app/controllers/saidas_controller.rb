@@ -10,7 +10,7 @@ class SaidasController < ApplicationController
         if @vehicle
             @vehicle.hora_saida = params[:vehicle][:hora_saida]
             @vehicle.total_a_pagar_por_veiculo = calculo(@vehicle.placa, @vehicle.hora_entrada, @vehicle.hora_saida)
-            @vehicle.subtotal = calcular_subtotal(@vehicle.total_a_pagar_por_veiculo)
+            @vehicle.subtotal = calcular_subtotal_acumulado(@vehicle.total_a_pagar_por_veiculo)
             #debugger
             
             if @vehicle.save
@@ -38,10 +38,10 @@ class SaidasController < ApplicationController
     end
 
     def calcular_subtotal_acumulado(total_a_pagar_por_veiculo)
+        #debugger
         total_acumulado = 0
         total_acumulado += total_a_pagar_por_veiculo
-        acumulo = total_acumulado
-        return acumulo
+        return total_acumulado
     end  
 
 end
