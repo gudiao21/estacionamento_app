@@ -14,9 +14,12 @@ class SaidasController < ApplicationController
             #debugger
             
             if @vehicle.save
+                @vehicle.subtotal = calcular_subtotal_acumulado(@vehicle.total_a_pagar_por_veiculo)
+                @vehicle.save
+                update_total_acumulado(@vehicle.total_a_pagar_por_veiculo)
                 flash[:notice] = 'Saída do veículo cadastrada com sucesso!'
                 flash[:vehicle_attributes] = @vehicle.attributes.slice('placa', 'nome_veiculo', 'dono_do_veiculo', 'hora_entrada', 'hora_saida', 'total_a_pagar_por_veiculo')
-                #redirect_to welcome_path
+                redirect_to welcome_path
             else
                 flash[:error] = 'Erro ao cadastrar saída do veículo.'
                 render :saida
@@ -37,11 +40,18 @@ class SaidasController < ApplicationController
         return resultado
     end
 
-    def calcular_subtotal_acumulado(total_a_pagar_por_veiculo)
-        #debugger
-        total_acumulado = 0
-        total_acumulado += total_a_pagar_por_veiculo
-        return total_acumulado
-    end  
+    def update_total_acumulado(total_a_pagar_por_veiculo)
+        if session[:total_acumulado].nil?
+            session[:total_acumulado] = total_a_pagar_por_veiculo
+        else
+            session[:total_acumulado] += total_a_pagar_por_veiculo
+        end
+    end
 
+    def calcular_subtotal_acumulado(total_a_pagar_por_veiculo)
+        total_acumulado = session[:total_acumulado].to_f
+        total_acumulado += total_a_pagar_por_veiculo
+        session[:total_acumulado] = total_acumulado
+        return total_acumulado
+    end
 end
