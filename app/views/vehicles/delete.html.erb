@@ -14,17 +14,3 @@
     <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
      <%= button_to "Deletar esse veículo", destroy_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?', class: 'btn' } %>
 <% end %>
-
-<!--<h1>Excluir um registro de veículo por placa</h1>
-
-<%= form_tag procurar_deletar_path, method: :post do %>
-    <div class="field">
-        <%= label_tag :placa, 'Placa do veículo:' %>
-        <%= text_field_tag :placa %>
-    </div>
-    <%= submit_tag 'Buscar', class: 'btn' %>
-<% end %>
-
-<% if @vehicle %>
-    <%= render partial: 'confirm_delete', object: @vehicle %>
-<% end %> -->

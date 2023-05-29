@@ -15,7 +15,6 @@ class VehiclesController < ApplicationController
     end
 
     def edit_by_placa
-        #render 'edit_by_placa_vehicle'
         @vehicle = Vehicle.find_by(placa: params[:placa])
         debugger
 
@@ -29,11 +28,12 @@ class VehiclesController < ApplicationController
 
     def update
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        if @vehicle
-            redirect_to edit_vehicle_path(@vehicle)
+        debugger
+        if @vehicle.update(vehicle_params)
+            flash[:success] = "Veículo atualizado com sucesso"
+            redirect_to vehicles_path
         else
-            flash[:error] = 'Veículo não encontrado.'
-            redirect_to edit_by_placa_path
+            render 'edit'
         end
     end
 
@@ -68,19 +68,6 @@ class VehiclesController < ApplicationController
 
     def redirecionar_edit_form
         render 'edit'
-        # placa = params[:placa]
-        # @vehicle = Vehicle.find_by(placa: placa)
-
-        # if @vehicle
-        #     render 'edit_by_placa'
-        #     return
-        # else
-        #     flash[:error] = 'Veículo não encontrado.'
-        #     render 'home/welcome'
-        #     return
-        # end    
-        #debugger
-        #redirect_to edit_form_path
     end    
     
     def procurar_deletar
@@ -88,7 +75,6 @@ class VehiclesController < ApplicationController
         if @vehicle
         #debugger
             render 'delete'
-        #redirect_to delete_vehicle_path(placa: params[:placa]) if @vehicle
         else
             flash[:error] = 'Veículo não encontrado.'
             render 'delete'
@@ -99,31 +85,10 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find(params[:id])
     end
     
-    #  def destroy
-    #      @vehicle = Vehicle.find_by(placa: params[:placa])
-      
-    #      if @vehicle
-    #        if @vehicle.destroy
-    #          flash[:notice] = 'Registro de veículo excluído com sucesso.'
-    #          #redirect_to delete_vehicle_path
-    #        else
-    #          flash[:error] = 'Erro ao excluir o registro de veículo.'
-    #          #redirect_to delete_vehicle_path(placa: @vehicle.placa)
-    #        end
-    #        else
-    #        flash[:error] = 'Veículo não encontrado.'
-    #        #redirect_to delete_vehicle_path
-    #      end
-    #     render 'delete' #'delete se refere à 'app/views/vehicles/delete.html.erb'
-    # end
-    
     def find_vehicle
         @vehicle = Vehicle.find_by(placa: params[:placa])
         #debugger
             if @vehicle
-                #debugger
-                #redirect_to edit_vehicle_path(placa: @vehicle.placa)
-                #redirect_to edit_vehicle_path(@vehicle)
                 render 'edit'
             else
                 flash[:error] = "Veículo não encontrado"

@@ -4,38 +4,3 @@
   <%= text_field_tag(:placa) %>
   <%= submit_tag("Buscar") %>
 <% end %>
-
-
-<!--<% if @vehicle %>
-  <h2>Informações do veículo:</h2>
-  <p><strong>Placa:</strong> <%= @vehicle.placa %></p>
-  <p><strong>Nome do veículo:</strong> <%= @vehicle.nome_veiculo %></p>
-  <p><strong>Dono do veículo:</strong> <%= @vehicle.dono_do_veiculo %></p>
-  <p><strong>Hora de entrada:</strong> <%= @vehicle.hora_entrada %></p>
-  <p><strong>Hora saída:</strong> <%= @vehicle.hora_saida %></p>
-  <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
-  <hr>-->
-
-  <!--<%= form_for @vehicle, url: update_vehicle_path(@vehicle), method: :patch do |f| %>
-    <p>
-      <strong>Placa:</strong> <%= f.text_field :placa, id: 'vehicle_placa' %>
-    </p>
-    <p>
-      <strong>Nome:</strong> <%= f.text_field :nome_veiculo, id: 'vehicle_name' %>
-    </p>
-    <p>
-      <strong>Dono do veículo:</strong> <%= f.text_field :dono_do_veiculo, id: 'vehicle_owner' %>
-    </p>
-    <p>
-      <strong>Hora de entrada:</strong> <%= f.text_field :hora_entrada, id: 'vehicle_entry_time' %>
-    </p>
-    <p>
-      <strong>Hora saída:</strong> <%= f.text_field :hora_saida, id: 'vehicle_exit_time' %>
-    </p>
-    <p>
-      <strong>Total a pagar:</strong> <%= f.text_field :total_a_pagar_por_veiculo, id: 'vehicle_total_to_pay' %>
-    </p>
-    <%= f.button "Editar esse veículo", data: { confirm: 'Tem certeza?' }, class: 'btn' %>
-  <% end %>
-<% end %>
--->
