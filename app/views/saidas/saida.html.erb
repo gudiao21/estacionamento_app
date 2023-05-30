@@ -28,6 +28,6 @@
   </div>
 
   <%= f.submit "Cadastrar saída", class: "btn", id: "submit-button" %>
-  <%= link_to "Voltar para tela Principal", welcome_path, class: "btn" %>
+  <%= link_to "Voltar para tela Principal", welcome_path(), method: :get %>
 <% end %>
 </body>

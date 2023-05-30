@@ -61,3 +61,10 @@
     background-repeat: -no-repeat;
     background-size: cover;
   }
+  .view-report {
+    position: relative;
+    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
+    background-image: url('Relatorio.jpg');
+    background-repeat: -no-repeat;
+    background-size: cover;
+  }

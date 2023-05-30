@@ -4,6 +4,7 @@ class SaidasController < ApplicationController
     end
     
     def create
+        @vehicle = Vehicle.new
         @vehicle = Vehicle.find_by(placa: params[:placa])
         #debugger
         
