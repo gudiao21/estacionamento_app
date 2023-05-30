@@ -1,3 +1,4 @@
+<body class="view-edit">
 <h1>Editar Veículo</h1>
 <%= form_for(@vehicle, url: update_vehicle_path(@vehicle.placa), method: :patch) do |f| %>
     <%= f.label :placa, "Placa do Veículo" %>
@@ -14,3 +15,4 @@
     <p><%= f.text_field :total_a_pagar_por_veiculo %></p>
     <p><%= f.submit "Editar" %></p>
 <% end %>
+</body>

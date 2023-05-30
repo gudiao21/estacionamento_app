@@ -30,5 +30,34 @@
     position: relative;
     background-color: rgba(72, 83, 72, 0.5); /* Cor de fundo com opacidade */
     background-image: url('Saida.jpg');
-    background-repeat: repeat;
+    background-repeat: -no-repeat;
+    background-size: cover;
+  }
+  .view-search {
+    position: relative;
+    background-color: rgba(72, 83, 72, 0.5); /* Cor de fundo com opacidade */
+    background-image: url('Buscar.jpg');
+    background-repeat: -no-repeat;
+    background-size: cover;
+  }
+  .view-delete {
+    position: relative;
+    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
+    background-image: url('Deletar.jpg');
+    background-repeat: -no-repeat;
+    background-size: cover;
+  }
+  .view-edit {
+    position: relative;
+    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
+    background-image: url('Editar.png');
+    background-repeat: -no-repeat;
+    background-size: cover;
+  }
+  .view-search2 {
+    position: relative;
+    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
+    background-image: url('Buscar2.jpg');
+    background-repeat: -no-repeat;
+    background-size: cover;
   }

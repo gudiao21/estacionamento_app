@@ -1,3 +1,4 @@
+<body class="view-delete">
 <%= form_tag delete_form_path, method: :get do %>
     <%= label_tag(:Placa, "Buscar por placa:") %>
     <%= text_field_tag(:placa) %>
@@ -12,5 +13,7 @@
     <p><strong>Hora de entrada:</strong> <%= @vehicle.hora_entrada %></p>
     <p><strong>Hora saída:</strong> <%= @vehicle.hora_saida %></p>
     <p><strong>Total a pagar:</strong> <%= @vehicle.total_a_pagar_por_veiculo %></p>
-     <%= button_to "Deletar esse veículo", destroy_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?', class: 'btn' } %>
+    <%= button_to "Deletar esse veículo", destroy_vehicle_path(placa: @vehicle.placa), method: :delete, data: { confirm: 'Tem certeza?', class: 'btn' } %></p>
+    <p><%= button_to "Voltar a tela Principal", welcome_path(), method: :get %></p>
 <% end %>
+</body>
