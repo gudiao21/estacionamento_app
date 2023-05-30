@@ -28,7 +28,7 @@ class VehiclesController < ApplicationController
 
     def update
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        debugger
+        #debugger
         if @vehicle.update(vehicle_params)
             flash[:success] = "Veículo atualizado com sucesso"
             redirect_to vehicles_path

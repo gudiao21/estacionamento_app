@@ -39,6 +39,7 @@
     background-image: url('Buscar.jpg');
     background-repeat: -no-repeat;
     background-size: cover;
+    color: blue;
   }
   .view-delete {
     position: relative;
