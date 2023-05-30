@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ .view-welcome {
+    position: relative;
+    background-color: rgba(0, 128, 0, 0.5); /* Cor de fundo com opacidade */
+    background-image: url('Estacionamento.jpg');
+    background-repeat: repeat;
+  }
+  .view-entrada {
+    position: relative;
+    background-color: rgba(72, 83, 72, 0.2); /* Cor de fundo com opacidade */
+    background-image: url('Entrada.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .view-saida {
+    position: relative;
+    background-color: rgba(72, 83, 72, 0.5); /* Cor de fundo com opacidade */
+    background-image: url('Saida.jpg');
+    background-repeat: repeat;
+  }
