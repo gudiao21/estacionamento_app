@@ -16,7 +16,7 @@
  .banner {
   display: flex;
   align-items: flex-start; /* Alinha o texto ao topo */
-  justify-content: center; /* Alinha o texto à esquerda */
+  justify-content: flex-start; /* Alinha o texto à esquerda */
   height: 100vh; /* vh - viewport height (altura da janela de visualização) */
   width: 100%;
   position: relative;
@@ -26,7 +26,7 @@
 content: "";
 position: absolute;
 inset: 0;
-background-image: url("hospital.jpeg");
+background-image: url("Entrada.jpeg");
 background-size: cover;
 background-position: bottom;
 z-index: -1;
