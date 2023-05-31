@@ -13,59 +13,22 @@
  *= require_tree .
  *= require_self
  */
- .view-welcome {
-    position: relative;
-    background-color: rgba(0, 128, 0, 0.5); /* Cor de fundo com opacidade */
-    background-image: url('Estacionamento.jpg');
-    background-repeat: repeat;
-  }
-  .view-entrada {
-    position: relative;
-    background-color: rgba(72, 83, 72, 0.2); /* Cor de fundo com opacidade */
-    background-image: url('Entrada.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .view-saida {
-    position: relative;
-    background-color: rgba(72, 83, 72, 0.5); /* Cor de fundo com opacidade */
-    background-image: url('Saida.jpg');
-    background-repeat: -no-repeat;
-    background-size: cover;
-  }
-  .view-search {
-    position: relative;
-    background-color: rgba(72, 83, 72, 0.5); /* Cor de fundo com opacidade */
-    background-image: url('Buscar.jpg');
-    background-repeat: -no-repeat;
-    background-size: cover;
-    color: blue;
-  }
-  .view-delete {
-    position: relative;
-    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
-    background-image: url('Deletar.jpg');
-    background-repeat: -no-repeat;
-    background-size: cover;
-  }
-  .view-edit {
-    position: relative;
-    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
-    background-image: url('Editar.png');
-    background-repeat: -no-repeat;
-    background-size: cover;
-  }
-  .view-search2 {
-    position: relative;
-    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
-    background-image: url('Buscar2.jpg');
-    background-repeat: -no-repeat;
-    background-size: cover;
-  }
-  .view-report {
-    position: relative;
-    background-color: rgba(60, 83, 72, 0.2); /* Cor de fundo com opacidade */
-    background-image: url('Relatorio.jpg');
-    background-repeat: -no-repeat;
-    background-size: cover;
-  }
+ .banner {
+  display: flex;
+  align-items: flex-start; /* Alinha o texto ao topo */
+  justify-content: center; /* Alinha o texto à esquerda */
+  height: 100vh; /* vh - viewport height (altura da janela de visualização) */
+  width: 100%;
+  position: relative;
+}
+
+.banner::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image: url("hospital.jpeg");
+background-size: cover;
+background-position: bottom;
+z-index: -1;
+opacity: 0.5;
+}
