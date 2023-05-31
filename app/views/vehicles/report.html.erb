@@ -1,0 +1,55 @@
+<body class="view-report">
+<style>
+    table {
+        width: 100%;
+        border_collapse: collapse;
+    }
+
+    th {
+        text-align: center;
+        padding: 10px;
+    }
+    td {
+        text-align: center;
+        padding: 10px;
+    }
+    h1 {
+        color: blue;
+        font-size: 24px;
+    }
+    .my-class {
+        background-color: green;
+    }
+</style>
+
+<h1>Relatório de Veículos</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Nome do Veículo</th>
+            <th>Dono do Veículo</th>
+            <th>Hora de Entrada</th>
+            <th>Hora de Saída</th>
+            <th>Total a pagar</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @vehicle.each do |vehicle| %>
+            <tr>    
+                <td><%= vehicle.placa %></td>
+                <td><%= vehicle.nome_veiculo %></td>
+                <td><%= vehicle.dono_do_veiculo %></td>
+                <td><%= vehicle.hora_entrada %></td>
+                <td><%= vehicle.hora_saida %></td>
+                <td><%= number_to_currency(vehicle.total_a_pagar_por_veiculo, unit: 'R$', precision: 2) %></td>
+                <td><%= number_to_currency(vehicle.subtotal, unit: 'R$', precision: 2) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= button_to 'Voltar para Welcome', welcome_path, method: :get, class: 'btn' %>
+</body>
