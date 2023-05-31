@@ -16,7 +16,7 @@ class VehiclesController < ApplicationController
 
     def edit_by_placa
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        debugger
+        #debugger
 
         if @vehicle
             render 'edit_by_placa_vehicle'
