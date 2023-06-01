@@ -1,4 +1,5 @@
-<body class="view-saida">
+<body class="banner saida-banner">
+<div class="form-container">
 
 <h1>Cadastrar Saída do Veículo</h1>
 
@@ -18,14 +19,14 @@
 <% end %>
 
 <%= form_for @vehicle, url: new_saida_path, method: :post do |f| %>
-  <div class="field">
+  <p><div class="field">
     <%= label_tag :placa, 'Placa do veículo:' %>
     <%= text_field_tag :placa %>
-  </div>
-  <div class="field">
+  </div></p>
+  <p><div class="field">
     <%= f.label :hora_saida, 'Hora de saída: ' %>
     <%= f.datetime_local_field :hora_saida %>
-  </div>
+  </div></p>
 
   <%= f.submit "Cadastrar saída", class: "btn", id: "submit-button" %>
   <%= link_to "Voltar para tela Principal", welcome_path(), method: :get %>

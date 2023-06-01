@@ -46,4 +46,27 @@ opacity: 0.5; /*Quanto menor o número maior é a opacidade*/
  .welcome-banner::before {
   background-image: url("Estacionamento.jpg");
  }
- /*Estilo
+ /*Estilo do banner para entrada.html.erb: */
+ .entrada-banner::before{
+  background-image: url("Entrada.jpeg")
+ }
+ /*Estilo do banner para saida.html.erb: */
+ .saida-banner::before{
+  background-image: url("Saida.jpeg")
+ }
+ /*Estilo do banner para search.html.erb: */
+ .search-banner::before{
+  background-image: url("Buscar.jpg")
+ }
+ /*Estilo do banner para deletar.html.erb: */
+ .deletar-banner::before{
+  background-image: url("Deletar.jpg")
+ }
+/*Estilo do banner para search_edit_vehicle.html.erb: */
+.search_edit_vehicle-banner::before{
+  background-image: url("Buscar2.jpeg")
+}
+/*Estilo do banner para report.html.erb: */
+.report-banner::before{
+  background-image: url("Relatorio.jpg")
+}
