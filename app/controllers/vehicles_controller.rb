@@ -16,7 +16,7 @@ class VehiclesController < ApplicationController
 
     def edit_by_placa
         @vehicle = Vehicle.find_by(placa: params[:placa])
-        #debugger
+        debugger
 
         if @vehicle
             render 'edit_by_placa_vehicle'
@@ -89,10 +89,10 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find_by(placa: params[:placa])
         #debugger
             if @vehicle
-                render 'edit'
+                render 'edit' #Renderiza 'edit.html.erb'.
             else
                 flash[:error] = "Veículo não encontrado"
-                redirect_to search_edit_vehicle_path
+                redirect_to search_edit_vehicle_path #Redireciona de volta para 'search_edit_vehicle', que é a tela inicial de busca, porque, por algum erro, o processo de edição tem que começar tudo novamente.
             end
     end
 

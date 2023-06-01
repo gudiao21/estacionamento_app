@@ -70,3 +70,7 @@ opacity: 0.5; /*Quanto menor o número maior é a opacidade*/
 .report-banner::before{
   background-image: url("Relatorio.jpg")
 }
+/*Estilo do banner para edit.html.erb: */
+.edit-banner::before{
+  background-image: url("Buscar2.jpeg")
+}
