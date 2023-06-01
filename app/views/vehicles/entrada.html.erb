@@ -1,5 +1,6 @@
 <body class="banner entrada-banner">
-<h1>Cadastrar Entrada do Veiculo</h1>
+<div class="form-container">
+<h1>Cadastrar Entrada do Veiculo:</h1>
 
 <%= form_for @vehicle, url: vehicles_path, method: :post, html: { id: "vehicle-form" } do |f| %>
     <form>
@@ -15,14 +16,15 @@
             <%= f.label :dono_do_veiculo %><br>
             <%= f.text_field :dono_do_veiculo %>
         </div>
-        <div class="field">
+        <div class="field last-field">
             <%= f.label :hora_entrada %><br>
             <%= f.datetime_select :hora_entrada %>
         </div>
-        <%= f.submit "Cadastrar entrada", onclick: "confirmCadastro(event)", data: { confirm: "Confirma o cadastro do veículo de placa #{f.object.placa},
-            nome veículo: #{f.object.nome_veiculo},
-            dono do veículo: #{f.object.dono_do_veiculo},
-            hora de entrada: #{Time.current.strftime('%d/%m/%Y %H:%M:%S')}?" } %>
+        
+            <%= f.submit "Cadastrar entrada", onclick: "confirmCadastro(event)", data: { confirm: "Confirma o cadastro do veículo de placa #{f.object.placa},
+                nome veículo: #{f.object.nome_veiculo},
+                dono do veículo: #{f.object.dono_do_veiculo},
+                hora de entrada: #{Time.current.strftime('%d/%m/%Y %H:%M:%S')}?" } %>
 <% end %>
 
 <script>
