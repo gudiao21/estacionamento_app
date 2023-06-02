@@ -31,7 +31,7 @@ class VehiclesController < ApplicationController
         #debugger
         if @vehicle.update(vehicle_params)
             flash[:success] = "Veículo atualizado com sucesso"
-            redirect_to vehicles_path
+            redirect_to welcome_path
         else
             render 'edit'
         end

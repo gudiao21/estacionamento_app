@@ -36,7 +36,7 @@ class SaidasController < ApplicationController
         end       
     end
 
-    private
+    private #Significa que esse método é uma ação interna privada que só pode ser chamada por outros métodos dentro do mesmo controller. Essa é uma convenção usada para definir métodos auxiliares que não devem ser acessíveis externamente, mas são necessários para o funcionamento interno do controller.
 
     def calculo(placa, hora_entrada, hora_saida)
         segundos_total = ((hora_saida) - (hora_entrada)).to_i
