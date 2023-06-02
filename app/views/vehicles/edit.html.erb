@@ -3,18 +3,19 @@
 
 <h1>Editar Veículo</h1>
 <%= form_for(@vehicle, url: update_vehicle_path(@vehicle.placa), method: :patch) do |f| %>
-    <%= f.label :placa, "Placa do Veículo" %>
-    <p><%= f.text_field :placa %></p>
-    <p><%= f.label :nome_veiculo, "Nome do Veículo" %></p>
-    <p><%= f.text_field :nome_veiculo %></p>
-    <p><%= f.label :dono_do_veiculo, "Dono do Veículo" %></p>
-    <p><%= f.text_field :dono_do_veiculo %></p>
-    <p><%= f.label :hora_entrada, "Hora de Entrada" %></p>
-    <p><%= f.text_field :hora_entrada %></p>
-    <p><%= f.label :hora_saida, "Hora de Saída" %></p>
-    <p><%= f.text_field :hora_saida %></p>
-    <p><%= f.label :total_a_pagar_por_veiculo, "Total a pagar por veículo" %></p>
+    <br><%= f.label :placa, "Placa do Veículo" %><br>
+    <%= f.text_field :placa %><br>
+    <br><%= f.label :nome_veiculo, "Nome do Veículo" %><br>
+    <%= f.text_field :nome_veiculo %><br><br>
+    <%= f.label :dono_do_veiculo, "Dono do Veículo" %><br>
+    <%= f.text_field :dono_do_veiculo %><br><br>
+    <%= f.label :hora_entrada, "Hora de Entrada" %><br>
+    <%= f.text_field :hora_entrada %><br><br>
+    <%= f.label :hora_saida, "Hora de Saída" %><br>
+    <%= f.text_field :hora_saida %><br><br>
+    <%= f.label :total_a_pagar_por_veiculo, "Total a pagar por veículo" %><br>
     <%= f.text_field :total_a_pagar_por_veiculo %>
     <p><%= f.submit "Editar" %></p>
+    <p><%= button_to "Voltar para o menu principal", welcome_path, method: :get, form: { "data-method": "get" } %></p>
 <% end %>
 </body>
