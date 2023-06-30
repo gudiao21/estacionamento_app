@@ -118,3 +118,4 @@ class VehiclesController < ApplicationController
         params.require(:vehicle).permit(:placa, :nome_veiculo, :dono_do_veiculo, :hora_entrada, :hora_saida, :total_a_pagar_por_veiculo, :subtotal)
     end
 end
+#Teste
