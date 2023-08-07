@@ -102,8 +102,7 @@ class VehiclesController < ApplicationController
     #     if @vehicle
     #         redirect_to edit_form_path(@vehicle)
     #     else
-    #         flash[:error] = "Veículo não enc
-
+    #         flash[:error] = "Veículo não e
     def report
         @vehicle = Vehicle.all
         render 'report'
