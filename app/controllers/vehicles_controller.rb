@@ -102,8 +102,7 @@ class VehiclesController < ApplicationController
     #     if @vehicle
     #         redirect_to edit_form_path(@vehicle)
     #     else
-    #         flash[:error] = "Veículo não encontrado"
-
+    #         flash[:error] = "Veículo não enc
 
     def report
         @vehicle = Vehicle.all
