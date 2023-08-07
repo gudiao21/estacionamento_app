@@ -101,8 +101,7 @@ class VehiclesController < ApplicationController
     #     @vehicle = Vehicle.find_by(placa: params[:placa])
     #     if @vehicle
     #         redirect_to edit_form_path(@vehicle)
-    #     else
-    #         flash[:error] = "Veículo não e
+    #     ash[:error] = "Veículo não e
     def report
         @vehicle = Vehicle.all
         render 'report'
