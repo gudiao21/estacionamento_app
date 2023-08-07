@@ -100,8 +100,7 @@ class VehiclesController < ApplicationController
     #     #debugger
     #     @vehicle = Vehicle.find_by(placa: params[:placa])
     #     if @vehicle
-    #         redirect_to edit_form_path(@vehicle)
-    #  lo não e
+    #         redirect_to edit_form_path(@ve
     def report
         @vehicle = Vehicle.all
         render 'report'
