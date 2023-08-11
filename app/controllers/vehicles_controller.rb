@@ -100,13 +100,7 @@ class VehiclesController < ApplicationController
     #     #debugger
     #     @vehicle = Vehicle.find_by(placa: params[:placa])
     #     if @vehicle
-    #         redirect_to edit_form_path(@vehicle)
-    #     else
-    #         flash[:error] = "Veículo não encontrado"
-    #         redirect_to search_edit_vehicle_path
-    #     end
-    # end
-
+    #         redirect_to edit_form_path(@ve
     def report
         @vehicle = Vehicle.all
         render 'report'
@@ -118,4 +112,4 @@ class VehiclesController < ApplicationController
         params.require(:vehicle).permit(:placa, :nome_veiculo, :dono_do_veiculo, :hora_entrada, :hora_saida, :total_a_pagar_por_veiculo, :subtotal)
     end
 end
-#Teste
+#Teste2224
